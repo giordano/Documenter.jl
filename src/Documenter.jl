@@ -545,6 +545,7 @@ function git_push(
         run(`git config user.name "Documenter.jl"`)
         run(`git config user.email "documenter@juliadocs.github.io"`)
         if sshconfig !== nothing
+            @show read(sshconfig, String)
             run(`git config core.sshCommand "ssh -F $(sshconfig)"`)
         end
 
